@@ -14,9 +14,12 @@ public class Main {
         //3. Sumar los números de la diagonal de una matriz
         System.out.println("La suma de la diagonal de la matriz es: "+sumarDiagonalMatriz(numeros));
         //4. Dibujar una X en una matriz
+        System.out.println("Formando X en matriz: ");
         dibujoXenMatriz(numeros);
         //5. Cuadro superior en una matriz
-
+        System.out.println("Cuadrado superior en matriz: ");
+        cuadradoSuperiorMatriz(numeros);
+        //6. Dibujar en una matriz una espiral de números
     }
     public static void imprimirMatriz(int [][] matriz){
         for (int i=0;i<matriz.length;i++){
@@ -54,6 +57,19 @@ public class Main {
                     System.out.print(matriz[i][j] + " ");
                 } else {
                     System.out.print("  ");
+                }
+            }
+            System.out.println();
+        }
+    }
+    public static void cuadradoSuperiorMatriz(int[][] matriz) {
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                //if (j >= i) hace que se conserve todo lo que esta desde la diagonal hacia arriba
+                if (j >= i) {
+                    System.out.print(matriz[i][j] + " ");
+                } else {
+                    System.out.print("0 ");
                 }
             }
             System.out.println();
