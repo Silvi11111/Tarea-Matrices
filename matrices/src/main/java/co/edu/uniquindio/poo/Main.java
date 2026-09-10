@@ -22,6 +22,7 @@ public class Main {
         //6. Dibujar en una matriz una espiral de números
         System.out.println("Una espiral de numeros en una matriz: ");
         matrizEspiral(numeros);
+        imprimirMatriz(numeros);
     }
     public static void imprimirMatriz(int [][] matriz){
         for (int i=0;i<matriz.length;i++){
@@ -113,5 +114,12 @@ public class Main {
             }
         }
     }
-
+    public static void imprimirMatrizEspiral(int [][]matriz){
+        for (int i = 0; i < matriz.length; i++) {
+            for (int j = 0; j < matriz[i].length; j++) {
+                System.out.print(matriz[i][j] + "\t");
+            }
+            System.out.println();
+        }
+    }
 }
