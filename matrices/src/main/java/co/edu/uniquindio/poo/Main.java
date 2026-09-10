@@ -20,6 +20,8 @@ public class Main {
         System.out.println("Cuadrado superior en matriz: ");
         cuadradoSuperiorMatriz(numeros);
         //6. Dibujar en una matriz una espiral de números
+        System.out.println("Una espiral de numeros en una matriz: ");
+        matrizEspiral(numeros);
     }
     public static void imprimirMatriz(int [][] matriz){
         for (int i=0;i<matriz.length;i++){
@@ -75,8 +77,41 @@ public class Main {
             System.out.println();
         }
     }
-    public static void espiralNumerosMatriz(int[][]matriz){
-        
+    public static void matrizEspiral(int[][] matriz) {
+        int inicioFila = 0;
+        int finFila = matriz.length - 1;
+
+        int inicioColumna = 0;
+        int finColumna = matriz[0].length - 1;
+
+        int numero = 1;
+        while (inicioFila <= finFila && inicioColumna <= finColumna) {
+
+            // De izquierda a derecha
+            for (int j = inicioColumna; j <= finColumna; j++) {
+                matriz[inicioFila][j] = numero++;
+            }
+            inicioFila++;
+            // De arriba hacia abajo
+            for (int i = inicioFila; i <= finFila; i++) {
+                matriz[i][finColumna] = numero++;
+            }
+            finColumna--;
+            // De derecha a izquierda
+            if (inicioFila <= finFila) {
+                for (int j = finColumna; j >= inicioColumna; j--) {
+                    matriz[finFila][j] = numero++;
+                }
+                finFila--;
+            }
+            // De abajo hacia arriba
+            if (inicioColumna <= finColumna) {
+                for (int i = finFila; i >= inicioFila; i--) {
+                    matriz[i][inicioColumna] = numero++;
+                }
+                inicioColumna++;
+            }
+        }
     }
 
 }
